@@ -1,4 +1,6 @@
 import readlineSync from "readline-sync";
+import base64Encoding from "./encoding.js"
+//import base64Decoding from "./decoding.js"
 
 function main() {
     console.log("------------------------------")
@@ -14,15 +16,19 @@ function main() {
             console.log("ADIOS BYE BYE")
             break
         case 1:
-            console.log("implement encoding logic")
+            base64Encoding()
             break
         case 2:
-            console.log("implement decoding logic")
+            Console.log("Decoding")
             break
         default:
             console.log("Invalid input")
+    }const repeat = readlineSync.question("Do you want to continue ?  Y/N ")
+    if(repeat == "yes" || repeat == "y" || repeat =="YES" || repeat == "Yes" ){
+        return main()
+    }else {
+        console.log("Bye Bye")
     }
 }
 
-var output = main()
-console.log(output)
+ main()
